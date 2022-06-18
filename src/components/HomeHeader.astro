@@ -1,0 +1,84 @@
+---
+export interface Props {
+	post: any;
+}
+
+
+const { post } = Astro.props;
+---
+<header class="header">
+	<div class="header__retro-border"></div>
+	<div class="header__background"></div>
+</header>
+
+<style>
+
+	.header {
+		position: relative;
+		width: 100vw;
+		max-width: 1200px;
+		height: 100vw;
+		max-height: 1200px;		
+	}
+
+	.header__retro-border {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		z-index: -2;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: var(--border-white);
+		background-image: url(/public/assets/design-assets/cardboard.png);
+	}
+	/* .header__background {
+		height: 90vw;
+		max-width: calc(1280px - 50px);
+		width: 90vw;
+		max-height: calc(1280px - 50px);
+		position: absolute;
+		z-index: -1;
+		background-color: var(--border-yellow);
+		background-image: url(/public/assets/design-assets/cardboard.png);
+	} */
+
+
+	.content :global(main > * + *) {
+		margin-top: 1rem;
+	}
+
+	.post-preview {
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+		border-bottom: 4px solid var(--theme-divider);
+	}
+
+	header {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-bottom: 2rem;
+		text-align: left;
+	}
+
+	.title,
+	.author,
+	.publish-date {
+		margin: 0;
+	}
+
+	.publish-date,
+	.author {
+		font-size: 1.25rem;
+		color: var(--theme-text-lighter);
+	}
+
+	.title {
+		font-size: 2.25rem;
+		font-weight: 700;
+		color: var(--theme-text);
+	}
+</style>
