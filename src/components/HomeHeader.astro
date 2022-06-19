@@ -1,30 +1,97 @@
 ---
+// import anime from 'animejs'
 export interface Props {
 	post: any;
 }
 
 
-const { post } = Astro.props;
+const {post}=Astro.props;
+// const path=anime.path('.title-path path');
+
 ---
+
 <header class="header">
 	<div class="header__retro-border"></div>
 	<div class="header__background"></div>
+	<!-- <span class="header__title">Worldwide Jamie</span> -->
+	<div class="header__title--container">
+		<svg class="title-path" preserveAspectRatio="none" viewBox="0 0 500 500">
+			<style>
+				text {
+					font-size: 2em;
+					font-family: 'ITC Pioneer W01 Regular', sans-serif;
+					height: 100%;
+					width: 100%;
+					letter-spacing: 0.2em;
+				}
+
+				path {
+					height: 100%;
+					width: 100%;
+				}
+			</style>
+			<defs>
+				<!-- <path id="circle" d="
+      	M75,250a175,175 0 1,0 3550,0a175,175 0 1,0 -350,0" /> -->
+				<path id="line" d="M60, 250 h 500" />
+			</defs>
+
+			<text>
+				<textPath xlink:href="#line">
+					Worldwide Jamie
+				</textPath>
+			</text>
+		</svg>
+	</div>
 </header>
 
 <style>
-
 	.header {
 		position: relative;
 		width: 100vw;
 		max-width: 1200px;
 		height: 100vw;
-		max-height: 1200px;		
+		max-height: 1200px;
+		/* display: flex;
+		justify-content: center;
+		align-items: center; */
+	}
+
+	svg {
+		height: 100%;
+		width: 100%;
+		/* animation: rotate-text 60s linear infinite; */
+	}
+
+	svg:hover {
+		animation-direction: alternate-reverse;
+		transform: rotate(0deg)
+	}
+
+	@keyframes rotate-text {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.header {
+			height: 65vw;
+			width: 65vw;
+			margin-top: 5vmin;
+			margin-right: auto;
+			margin-left: auto
+		}
 	}
 
 	.header__retro-border {
 		height: 100%;
 		width: 100%;
-		position: relative;
+		position: absolute;
 		z-index: -2;
 		top: 0;
 		right: 0;
@@ -33,52 +100,21 @@ const { post } = Astro.props;
 		background-color: var(--border-white);
 		background-image: url(/public/assets/design-assets/cardboard.png);
 	}
-	/* .header__background {
-		height: 90vw;
-		max-width: calc(1280px - 50px);
-		width: 90vw;
-		max-height: calc(1280px - 50px);
+
+	.header__background {
+		height: 95%;
+		width: 95%;
+		left: 2.5%;
+		top: 2.5%;
 		position: absolute;
 		z-index: -1;
 		background-color: var(--border-yellow);
 		background-image: url(/public/assets/design-assets/cardboard.png);
-	} */
-
-
-	.content :global(main > * + *) {
-		margin-top: 1rem;
 	}
 
-	.post-preview {
-		padding-bottom: 2rem;
-		margin-bottom: 2rem;
-		border-bottom: 4px solid var(--theme-divider);
-	}
-
-	header {
-		align-items: flex-start;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-bottom: 2rem;
-		text-align: left;
-	}
-
-	.title,
-	.author,
-	.publish-date {
-		margin: 0;
-	}
-
-	.publish-date,
-	.author {
-		font-size: 1.25rem;
-		color: var(--theme-text-lighter);
-	}
-
-	.title {
-		font-size: 2.25rem;
-		font-weight: 700;
-		color: var(--theme-text);
+	.header__title,
+	.wwj-title {
+		font-family: "ITC Pioneer W01 Regular";
+		font-size: 3.5vw;
 	}
 </style>
