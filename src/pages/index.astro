@@ -3,26 +3,27 @@
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
-import HomeHeader from '../components/Header.astro';
+import HomeHeader from '../components/HomeHeader.astro';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'Example Blog';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
+let title='Example Blog';
+let description='The perfect starter for your perfect blog.';
+let permalink='https://example.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
-let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+let allPosts=await Astro.glob('./posts/*.md');
+allPosts=allPosts.sort((a,b) => new Date(b.frontmatter.publishDate).valueOf()-new Date(a.frontmatter.publishDate).valueOf());
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <html lang="en">
+
 	<head>
 		<BaseHead {title} {description} {permalink} />
 
@@ -51,7 +52,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 				border-bottom: 4px solid var(--theme-divider);
 			}
 
-			.intro > * {
+			.intro>* {
 				margin: 0;
 			}
 
@@ -63,7 +64,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 	</head>
 
 	<body>
-		<HomeHeader/>
+		<HomeHeader />
 		<div class="wrapper">
 			<main class="content">
 				<section class="intro">
@@ -71,9 +72,11 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 					<p>{description}</p>
 				</section>
 				<section aria-label="Blog post list">
-					{allPosts.map((p) => <BlogPostPreview post={p} />)}
+					{allPosts.map((p) =>
+					<BlogPostPreview post={p} />)}
 				</section>
 			</main>
 		</div>
 	</body>
+
 </html>
