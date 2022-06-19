@@ -6,5 +6,13 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), react(), tailwind()]
+  integrations: [preact(), react(), tailwind()],
+  vite: {
+    resolve: {
+      alias: {
+        $: "/src",
+        $components: "/src/components",
+      }
+    }
+  }
 });
