@@ -6,7 +6,7 @@ export interface Props {
 	description: string;
 	permalink: string;
 }
-const { title, description, permalink } = Astro.props;
+const {title,description,permalink}=Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -35,4 +35,30 @@ const { title, description, permalink } = Astro.props;
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" />
+<script
+	src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script type="text/javascript">
+	var MTUserId='8211b140-2c22-4666-aae1-7c158d8c40d5';
+	var MTFontIds=new Array();
+
+	MTFontIds.push("1141825"); // ITC Pioneer™ W01 Regular 
+	(function() {
+		var mtTracking=document.createElement('script');
+		mtTracking.type='text/javascript';
+		mtTracking.async='true';
+		mtTracking.src='../../public/assets/design-assets/mtiFontTrackingCode.js';
+
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
+	})();
+</script>
+
+<style type="text/css">
+	@font-face {
+		font-family: "ITC Pioneer W01 Regular";
+		src: url("../../public/assets/Fonts/1141825/301885e8-07ab-4f84-89d2-03aa99582794.woff2") format("woff2"), url("Fonts/1141825/d0b19689-febd-4b2b-939c-e94798dbc8ef.woff") format("woff");
+	}
+</style>
+
+<script src="../assets/scripts/scripts.js"></script>
