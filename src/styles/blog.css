@@ -1,15 +1,15 @@
 :root {
-	--font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
-		Apple Color Emoji, Segoe UI Emoji;
-	--font-body: 'IBM Plex Sans', var(--font-fallback);
-	--font-mono: 'IBM Plex Mono', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-		'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
-		'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+	--font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji;
+	--font-body: "IBM Plex Sans", var(--font-fallback);
+	--font-mono: "IBM Plex Mono", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+		"DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+		monospace;
 
 	--color-white: #fff;
 	--color-black: #000014;
 
-	--color-yellow: #EAB515;	
+	--color-yellow: #eab515;
 	--color-gray-50: #f9fafb;
 	--color-gray-100: #f3f4f6;
 	--color-gray-200: #e5e7eb;
@@ -35,6 +35,20 @@
 	--border-yellow-rgb: 255, 190, 45;
 	--border-white: #f1e9c9;
 	--border-white-rgb: 241, 233, 201;
+
+	/* CSS HEX */
+	/* --barn-red: #6f1a07ff;
+	--black-coral: #3d5a6cff;
+	--gold-metallic: #d7b258ff;
+	--medium-turquoise: #78d5d7ff;
+	--celeste: #adfcf9ff; */
+
+	/* CSS HSL */
+	--barn-red: hsla(11, 88%, 23%, 0.9);
+	--black-coral: hsla(203, 28%, 33%, 1);
+	--gold-metallic: hsla(43, 61%, 59%, 1);
+	--medium-turquoise: hsla(181, 54%, 66%, 1);
+	--celeste: hsla(178, 93%, 83%, 1);
 }
 
 :root {
@@ -176,7 +190,7 @@ a > code {
 }
 
 a > code::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	right: 0;

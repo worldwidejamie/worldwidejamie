@@ -11,7 +11,7 @@ function rotateText() {
 anime({
 	targets: "svg text",
 	rotate: 360,
-	duration: 2000,
+	duration: 4000,
 	easing: "spring"
 })
 }

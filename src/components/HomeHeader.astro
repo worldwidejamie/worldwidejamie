@@ -4,41 +4,26 @@ export interface Props {
 	post: any;
 }
 
-
 const {post}=Astro.props;
-// const path=anime.path('.title-path path');
 
 ---
 
 <header class="header">
 	<div class="header__retro-border"></div>
 	<div class="header__background"></div>
-	<!-- <span class="header__title">Worldwide Jamie</span> -->
 	<div class="header__title--container">
-		<svg class="title-path" preserveAspectRatio="none" viewBox="0 0 500 500">
-			<style>
-				text {
-					font-size: 2em;
-					font-family: 'ITC Pioneer W01 Regular', sans-serif;
-					height: 100%;
-					width: 100%;
-					letter-spacing: 0.2em;
-				}
-
-				path {
-					height: 100%;
-					width: 100%;
-				}
-			</style>
+		<svg class="title-path" preserveAspectRatio="none" viewBox="0 0 750 350">
 			<defs>
-				<!-- <path id="circle" d="
-      	M75,250a175,175 0 1,0 3550,0a175,175 0 1,0 -350,0" /> -->
-				<path id="line" d="M60, 250 h 500" />
+				<path id="line" d="M 5, 27 h 500" />
+				<path id="line-2" d="M 5 65 h 500" />
 			</defs>
 
 			<text>
 				<textPath xlink:href="#line">
-					Worldwide Jamie
+					Worldwide
+				</textPath>
+				<textPath xlink:href="#line-2">
+					Jamie
 				</textPath>
 			</text>
 		</svg>
@@ -49,42 +34,46 @@ const {post}=Astro.props;
 	.header {
 		position: relative;
 		width: 100vw;
-		max-width: 1200px;
 		height: 100vw;
-		max-height: 1200px;
-		/* display: flex;
-		justify-content: center;
-		align-items: center; */
+		overflow: hidden;
+	}
+
+	.header__title--container {
+		position: relative;
 	}
 
 	svg {
-		height: 100%;
+		position: absolute;
+		transform: translate(20vw, calc(50vw - 50px));
+		width: 100vw;
+	}
+
+	svg path {
 		width: 100%;
-		/* animation: rotate-text 60s linear infinite; */
+		height: 100%;
+
 	}
 
-	svg:hover {
-		animation-direction: alternate-reverse;
-		transform: rotate(0deg)
-	}
-
-	@keyframes rotate-text {
-		0% {
-			transform: rotate(0deg);
-		}
-
-		100% {
-			transform: rotate(360deg);
-		}
+	svg text {
+		font-size: 2em;
+		font-family: 'ITC Pioneer W01 Regular', sans-serif;
+		letter-spacing: 0.2em;
+		fill: #6f1a07ff;
 	}
 
 	@media (min-width: 1200px) {
 		.header {
-			height: 65vw;
-			width: 65vw;
+			height: 30vw;
+			width: 75vw;
 			margin-top: 5vmin;
 			margin-right: auto;
 			margin-left: auto
+		}
+
+		svg {
+			width: 1000px;
+			position: absolute;
+			transform: translate(10vw, calc(15vw - 50px));
 		}
 	}
 
