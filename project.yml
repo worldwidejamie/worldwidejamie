@@ -1,0 +1,16 @@
+name: headless-ghost
+region: nyc
+services:
+- build_command: yarn build
+  environment_slug: node-js
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: worldwidejamie/worldwidejamie
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: worldwidejamie
+  routes:
+  - path: /
+  source_dir: /
