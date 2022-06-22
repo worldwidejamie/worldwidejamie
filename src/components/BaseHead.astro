@@ -48,7 +48,7 @@ const {title,description,permalink}=Astro.props;
 		var mtTracking=document.createElement('script');
 		mtTracking.type='text/javascript';
 		mtTracking.async='true';
-		mtTracking.src='../../public/assets/design-assets/mtiFontTrackingCode.js';
+		mtTracking.src='../assets/design-assets/mtiFontTrackingCode.js';
 
 		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
 	})();
@@ -57,7 +57,7 @@ const {title,description,permalink}=Astro.props;
 <style type="text/css">
 	@font-face {
 		font-family: "ITC Pioneer W01 Regular";
-		src: url("../../public/assets/Fonts/1141825/301885e8-07ab-4f84-89d2-03aa99582794.woff2") format("woff2"), url("Fonts/1141825/d0b19689-febd-4b2b-939c-e94798dbc8ef.woff") format("woff");
+		src: url("../assets/Fonts/1141825/301885e8-07ab-4f84-89d2-03aa99582794.woff2") format("woff2"), url("Fonts/1141825/d0b19689-febd-4b2b-939c-e94798dbc8ef.woff") format("woff");
 	}
 </style>
 
