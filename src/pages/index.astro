@@ -9,9 +9,9 @@ import HomeHeader from '../components/HomeHeader.astro';
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title='Example Blog';
-let description='The perfect starter for your perfect blog.';
-let permalink='https://example.com/';
+let title='You found a secret website!';
+let description="I'm still building so there's not much to see.";
+// let permalink='https://example.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -25,7 +25,7 @@ allPosts=allPosts.sort((a,b) => new Date(b.frontmatter.publishDate).valueOf()-ne
 <html lang="en">
 
 	<head>
-		<BaseHead {title} {description} {permalink} />
+		<BaseHead {title} {description} />
 
 		<style>
 			header {
