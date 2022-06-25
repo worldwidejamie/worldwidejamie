@@ -3,15 +3,30 @@ export interface Props {
 	post: any;
 }
 
-const { post } = Astro.props;
+const {post}=Astro.props;
+const dateParse=Date.parse(post.created_at);
+const newDate=new Date(dateParse);
+const day=newDate.getDate();
+const weekday=newDate.getDay();
+const month=newDate.getMonth();
+const year=newDate.getFullYear();
+
+const weekdayNames=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+const monthNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
 ---
 
 <article class="post-preview">
 	<header>
-		<p class="publish-date">{post.frontmatter.publishDate}</p>
-		<a href={post.url}><h1 class="title">{post.frontmatter.title}</h1></a>
+		<a href={post.url}>
+			<h1 class="title">{post.title}</h1>
+		</a>
+		<span>Created:</span>
+		<p class="publish-date">{weekdayNames[weekday]}, {monthNames[month]} {day},
+			{year}</p>
+		</p>
 	</header>
-	<p>{post.frontmatter.description}</p>
+	<p>{post.excerpt}</p>
 	<a href={post.url}>Read more</a>
 </article>
 
