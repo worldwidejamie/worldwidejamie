@@ -1,0 +1,26 @@
+domains:
+- domain: worldwidejamie.com
+  type: PRIMARY
+  zone: worldwidejamie.com
+name: headless-ghost
+region: nyc
+static_sites:
+- build_command: yarn build
+  environment_slug: node-js
+  envs:
+  - key: CONTENT_API_KEY
+    scope: BUILD_TIME
+    value: cfbb6084dbad5387129b82b80d
+  - key: ADMIN_API_KEY
+    scope: BUILD_TIME
+    type: SECRET
+    value: EV[1:uy/s1WLr/Gl0xN5HvC1q1wy3sKCd32Rk:sJrNt2BAn4xajQZA30x3r+P3iuuI9iEHQM73CZXuw1iK26i+B0MjejORC0VndsNHZmWXgtaPrfGmVbG0UDMkdpNeK4h6iFsqWh0lgdsdq7A=]
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: worldwidejamie/worldwidejamie
+  name: worldwidejamie
+  output_dir: dist
+  routes:
+  - path: /
+  source_dir: /
