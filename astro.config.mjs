@@ -8,12 +8,4 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
 	integrations: [react(), tailwind()],
 	adapter: nodejs(),
-	vite: {
-		resolve: {
-			alias: {
-				$: "/src",
-				$components: "/src/components",
-			},
-		},
-	},
 });
