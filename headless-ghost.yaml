@@ -23,4 +23,4 @@ static_sites:
   output_dir: dist
   routes:
   - path: /
-  source_dir: /
+  source_dir: src
