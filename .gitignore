@@ -3,7 +3,6 @@ dist/
 
 # dependencies
 node_modules/
-api.config.js
 
 # logs
 npm-debug.log*
