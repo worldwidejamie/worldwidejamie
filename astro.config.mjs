@@ -1,18 +1,19 @@
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
+import { defineConfig } from "astro/config";
+import nodejs from "@astrojs/node";
 
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), react(), tailwind()],
-  vite: {
-    resolve: {
-      alias: {
-        $: "/src",
-        $components: "/src/components",
-      }
-    }
-  }
+	integrations: [react(), tailwind()],
+	adapter: nodejs(),
+	vite: {
+		resolve: {
+			alias: {
+				$: "/src",
+				$components: "/src/components",
+			},
+		},
+	},
 });
