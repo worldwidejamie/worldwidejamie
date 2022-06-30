@@ -18,7 +18,7 @@ static_sites:
   github:
     branch: main
     deploy_on_push: true
-    repo: worldwidejamie/worldwidejamie
+    repo: worldwidejamie/wwj-blog
   name: worldwidejamie
   output_dir: dist
   routes:
