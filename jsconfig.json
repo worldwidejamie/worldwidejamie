@@ -10,8 +10,6 @@
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Add type definitions for our Vite runtime.
-    "types": ["vite/client"],
-    // Setup base url for the client.
-    "baseUrl": "/",
+    "types": ["vite/client"]
   }
 }
