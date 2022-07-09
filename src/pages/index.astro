@@ -13,9 +13,6 @@ let title='You found a secret website!';
 let description="I'm still building so there's not much to see.";
 // let permalink='https://example.com/';
 
-// Data Fetching: List all Markdown posts in the repo.
-let allPosts=await Astro.glob('./posts/*.md');
-allPosts=allPosts.sort((a,b) => new Date(b.frontmatter.publishDate).valueOf()-new Date(a.frontmatter.publishDate).valueOf());
 
 // Get all remote posts
 const remotePosts=await fetch(apiConfig.apiURL+'/posts/?key='+apiConfig.contentApiKey)
@@ -56,15 +53,6 @@ let allRemotePosts=remoteResponse.posts;
 				margin-bottom: 2rem;
 				border-bottom: 4px solid var(--theme-divider);
 			}
-
-			.intro>* {
-				margin: 0;
-			}
-
-			.latest {
-				font-size: 2.5rem;
-				font-weight: 700;
-			}
 		</style>
 	</head>
 
@@ -72,14 +60,9 @@ let allRemotePosts=remoteResponse.posts;
 		<HomeHeader />
 		<div class="wrapper">
 			<main class="content">
-				<section class="intro">
-					<h1 class="latest">{title}</h1>
-					<p>{description}</p>
-				</section>
 				<section aria-label="Blog post list">
 					{allRemotePosts.map((p) =>
 					<BlogPostPreview post={p} />)}
-
 				</section>
 			</main>
 		</div>
