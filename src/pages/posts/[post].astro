@@ -1,0 +1,39 @@
+---
+import {apiConfig} from "../../../api.config";
+import BaseHead from "../../components/BaseHead.astro";
+
+
+export async function getStaticPaths() {
+	const remotePosts=await fetch(apiConfig.apiURL+"/posts/?key="+apiConfig.contentApiKey);
+	const data=await remotePosts.json();
+	const posts=data.posts;
+	return posts.map(p => {
+		return [
+			{
+				params: {
+					post: p.slug
+				},
+				props: {
+					p
+				}
+			}
+		]
+	})
+}
+const post=Astro.props.p;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<BaseHead {post.title} />
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<h1>{post.title}</h1>
+		</div>
+	</body>
+
+</html>
